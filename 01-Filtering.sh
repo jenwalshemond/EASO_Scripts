@@ -1,4 +1,4 @@
-#Grasshopper Sparrow Project
+#EASO Project
 #Jen Walsh, March 2023
 #QC and adapter removal for resequencing data
 #FASTQC
