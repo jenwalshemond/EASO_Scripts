@@ -77,3 +77,82 @@ conda deactivate
 /programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/s_20_CKDL210027074-1a_H7W3WDSX3_L2_1.fq.gz --file2 /workdir/jlw395/s_20_CKDL210027074-1a_H7W3WDSX3_L2_2.fq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_OH20
 /programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/s_19_CKDL210027081-1a_H3KCHDSX3_L2_1.fq.gz --file2 /workdir/jlw395/s_19_CKDL210027081-1a_H3KCHDSX3_L2_2.fq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_OH19
 /programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/s_18_CKDL210027085-1a_H3KCHDSX3_L2_1.fq.gz --file2 /workdir/jlw395/s_18_CKDL210027085-1a_H3KCHDSX3_L2_2.fq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Gray_OH18
+
+#Data from Sarah
+#Concatenate reads across three lanes
+cat Lane_1_S6_Masio_11_ATCCGC.R1.fastq.gz Lane_3_S6_Masio_11_ATCCGC.R1.fastq.gz Lane_4_S6_Masio_11_ATCCGC.R1.fastq.gz > Ruf_IL6_R1.fastq.gz
+cat Lane_1_S6_Masio_11_ATCCGC.R2.fastq.gz Lane_3_S6_Masio_11_ATCCGC.R2.fastq.gz Lane_4_S6_Masio_11_ATCCGC.R2.fastq.gz > Ruf_IL6_R2.fastq.gz
+cat Lane_1_S31_Masio_08_ATGTCA.R1.fastq.gz Lane_3_S31_Masio_08_ATGTCA.R1.fastq.gz Lane_4_S31_Masio_08_ATGTCA.R1.fastq.gz > Ruf_IL31_R1.fastq.gz
+cat Lane_1_S31_Masio_08_ATGTCA.R2.fastq.gz Lane_3_S31_Masio_08_ATGTCA.R2.fastq.gz Lane_4_S31_Masio_08_ATGTCA.R2.fastq.gz > Ruf_IL31_R2.fastq.gz
+cat Lane_1_S28_Masio_07_AGTTCC.R1.fastq.gz Lane_3_S28_Masio_07_AGTTCC.R1.fastq.gz Lane_4_S28_Masio_07_AGTTCC.R1.fastq.gz > Ruf_IL28_R1.fastq.gz
+cat Lane_1_S28_Masio_07_AGTTCC.R2.fastq.gz Lane_3_S28_Masio_07_AGTTCC.R2.fastq.gz Lane_4_S28_Masio_07_AGTTCC.R2.fastq.gz > Ruf_IL28_R2.fastq.gz
+cat Lane_1_S20_Masio_06_GCCATA.R1.fastq.gz Lane_3_S20_Masio_06_GCCATA.R1.fastq.gz Lane_4_S20_Masio_06_GCCATA.R1.fastq.gz > Ruf_IL20_R1.fastq.gz
+cat Lane_1_S20_Masio_06_GCCATA.R2.fastq.gz Lane_3_S20_Masio_06_GCCATA.R2.fastq.gz Lane_4_S20_Masio_06_GCCATA.R2.fastq.gz > Ruf_IL20_R2.fastq.gz
+cat Lane_1_S19_Masio_05_TTAGCT.R1.fastq.gz Lane_3_S19_Masio_05_TTAGCT.R1.fastq.gz Lane_4_S19_Masio_05_TTAGCT.R1.fastq.gz > Ruf_MN19_R1.fastq.gz
+cat Lane_1_S19_Masio_05_TTAGCT.R2.fastq.gz Lane_3_S19_Masio_05_TTAGCT.R2.fastq.gz Lane_4_S19_Masio_05_TTAGCT.R2.fastq.gz > Ruf_MN19_R2.fastq.gz
+cat Lane_1_S17_Masio_19_AGACCA.R1.fastq.gz Lane_3_S17_Masio_19_AGACCA.R1.fastq.gz Lane_4_S17_Masio_19_AGACCA.R1.fastq.gz > Gray_WI17_R1.fastq.gz
+cat Lane_1_S17_Masio_19_AGACCA.R2.fastq.gz Lane_3_S17_Masio_19_AGACCA.R2.fastq.gz Lane_4_S17_Masio_19_AGACCA.R2.fastq.gz > Gray_WI17_R2.fastq.gz
+cat Lane_1_S13_Masio_04_GTAGGC.R1.fastq.gz Lane_3_S13_Masio_04_GTAGGC.R1.fastq.gz Lane_4_S13_Masio_04_GTAGGC.R1.fastq.gz > Ruf_WI13_R1.fastq.gz
+cat Lane_1_S13_Masio_04_GTAGGC.R2.fastq.gz Lane_3_S13_Masio_04_GTAGGC.R2.fastq.gz Lane_4_S13_Masio_04_GTAGGC.R2.fastq.gz > Ruf_WI13_R2.fastq.gz
+cat Lane_1_S11_Masio_12_CAGTGT.R1.fastq.gz Lane_3_S11_Masio_12_CAGTGT.R1.fastq.gz Lane_4_S11_Masio_12_CAGTGT.R1.fastq.gz > Gray_WI11_R1.fastq.gz
+cat Lane_1_S11_Masio_12_CAGTGT.R2.fastq.gz Lane_3_S11_Masio_12_CAGTGT.R2.fastq.gz Lane_4_S11_Masio_12_CAGTGT.R2.fastq.gz > Gray_WI11_R2.fastq.gz
+
+cat Lane_5_S9_Masio_17_CTGGCC.R1.fastq.gz Lane_2_S9_Masio_17_CTGGCC.R1.fastq.gz Lane_6_S9_Masio_17_CTGGCC.R1.fastq.gz > Gray_WI9_R1.fastq.gz
+cat Lane_5_S9_Masio_17_CTGGCC.R2.fastq.gz Lane_2_S9_Masio_17_CTGGCC.R2.fastq.gz Lane_6_S9_Masio_17_CTGGCC.R2.fastq.gz > Gray_WI9_R2.fastq.gz
+cat Lane_5_S7_Masio_16_CTGAAA.R1.fastq.gz Lane_2_S7_Masio_16_CTGAAA.R1.fastq.gz Lane_6_S7_Masio_16_CTGAAA.R1.fastq.gz > Ruf_WI7_R1.fastq.gz
+cat Lane_5_S7_Masio_16_CTGAAA.R2.fastq.gz Lane_2_S7_Masio_16_CTGAAA.R2.fastq.gz Lane_6_S7_Masio_16_CTGAAA.R2.fastq.gz > Ruf_WI7_R2.fastq.gz
+cat Lane_5_S32_Masio_05_GAGTGG.R1.fastq.gz Lane_2_S32_Masio_05_GAGTGG.R1.fastq.gz Lane_6_S32_Masio_05_GAGTGG.R1.fastq.gz > Gray_IL32_R1.fastq.gz
+cat Lane_5_S32_Masio_05_GAGTGG.R2.fastq.gz Lane_2_S32_Masio_05_GAGTGG.R2.fastq.gz Lane_6_S32_Masio_05_GAGTGG.R2.fastq.gz > Gray_IL32_R2.fastq.gz
+cat Lane_5_S1_Masio_14_CAGCTT.R1.fastq.gz Lane_2_S1_Masio_14_CAGCTT.R1.fastq.gz Lane_6_S1_Masio_14_CAGCTT.R1.fastq.gz > Ruf_IL1_R1.fastq.gz
+cat Lane_5_S1_Masio_14_CAGCTT.R2.fastq.gz Lane_2_S1_Masio_14_CAGCTT.R2.fastq.gz Lane_6_S1_Masio_14_CAGCTT.R2.fastq.gz > Ruf_IL1_R2.fastq.gz
+cat Lane_5_S18_Masio_11_GGCTAC.R1.fastq.gz Lane_2_S18_Masio_11_GGCTAC.R1.fastq.gz Lane_6_S18_Masio_11_GGCTAC.R1.fastq.gz > Gray_WI18_R1.fastq.gz
+cat Lane_5_S18_Masio_11_GGCTAC.R2.fastq.gz Lane_2_S18_Masio_11_GGCTAC.R2.fastq.gz Lane_6_S18_Masio_11_GGCTAC.R2.fastq.gz > Gray_WI18_R2.fastq.gz
+cat Lane_5_S16_Masio_09_TCCTAG.R1.fastq.gz Lane_2_S16_Masio_09_TCCTAG.R1.fastq.gz Lane_6_S16_Masio_09_TCCTAG.R1.fastq.gz > Mix_WI16_R1.fastq.gz
+cat Lane_5_S16_Masio_09_TCCTAG.R2.fastq.gz Lane_2_S16_Masio_09_TCCTAG.R2.fastq.gz Lane_6_S16_Masio_09_TCCTAG.R2.fastq.gz > Mix_WI16_R2.fastq.gz
+cat Lane_5_S15_Masio_04_AGGTAC.R1.fastq.gz Lane_2_S15_Masio_04_AGGTAC.R1.fastq.gz > Gray_IL15_R1.fastq.gz
+cat Lane_5_S15_Masio_04_AGGTAC.R2.fastq.gz Lane_2_S15_Masio_04_AGGTAC.R2.fastq.gz Lane_6_S15_Masio_04_AGGTAC.R2.fastq.gz > Gray_IL15_R2.fastq.gz
+cat Lane_5_S14_Masio_03_TTCGAA.R1.fastq.gz Lane_2_S14_Masio_03_TTCGAA.R1.fastq.gz Lane_6_S14_Masio_03_TTCGAA.R1.fastq.gz > Mix_WI14_R1.fastq.gz
+cat Lane_5_S14_Masio_03_TTCGAA.R2.fastq.gz Lane_2_S14_Masio_03_TTCGAA.R2.fastq.gz Lane_6_S14_Masio_03_TTCGAA.R2.fastq.gz > Mix_WI14_R2.fastq.gz
+cat Lane_5_S10_Masio_18_TAATGT.R1.fastq.gz Lane_2_S10_Masio_18_TAATGT.R1.fastq.gz Lane_6_S10_Masio_18_TAATGT.R1.fastq.gz > Gray_IL10_R1.fastq.gz
+cat Lane_5_S10_Masio_18_TAATGT.R2.fastq.gz Lane_2_S10_Masio_18_TAATGT.R2.fastq.gz Lane_6_S10_Masio_18_TAATGT.R2.fastq.gz > Gray_IL10_R2.fastq.gz
+
+cat Lane_3_S3_Masio_04_AGCTTT.R1.fastq.gz Lane_8_S3_Masio_04_AGCTTT.R1.fastq.gz Lane_7_S3_Masio_04_AGCTTT.R1.fastq.gz > Ruf_IA3_R1.fastq.gz
+cat Lane_3_S3_Masio_04_AGCTTT.R2.fastq.gz Lane_8_S3_Masio_04_AGCTTT.R2.fastq.gz Lane_7_S3_Masio_04_AGCTTT.R2.fastq.gz > Ruf_IA3_R2.fastq.gz
+cat Lane_3_S27_Masio_07_CTTGTA.R1.fastq.gz Lane_8_S27_Masio_07_CTTGTA.R1.fastq.gz Lane_7_S27_Masio_07_CTTGTA.R1.fastq.gz > Gray_WI27_R1.fastq.gz
+cat Lane_3_S27_Masio_07_CTTGTA.R2.fastq.gz Lane_8_S27_Masio_07_CTTGTA.R2.fastq.gz Lane_7_S27_Masio_07_CTTGTA.R2.fastq.gz > Gray_WI27_R2.fastq.gz
+cat Lane_3_S26_Masio_12_GCCAAT.R1.fastq.gz Lane_8_S26_Masio_12_GCCAAT.R1.fastq.gz Lane_7_S26_Masio_12_GCCAAT.R1.fastq.gz > Gray_WI26_R1.fastq.gz
+cat Lane_3_S26_Masio_12_GCCAAT.R2.fastq.gz Lane_8_S26_Masio_12_GCCAAT.R2.fastq.gz Lane_7_S26_Masio_12_GCCAAT.R2.fastq.gz > Gray_WI26_R2.fastq.gz
+cat Lane_3_S25_Masio_05_TGACCA.R1.fastq.gz Lane_8_S25_Masio_05_TGACCA.R1.fastq.gz Lane_7_S25_Masio_05_TGACCA.R1.fastq.gz > Ruf_IL25_R1.fastq.gz
+cat Lane_3_S25_Masio_05_TGACCA.R2.fastq.gz Lane_8_S25_Masio_05_TGACCA.R2.fastq.gz Lane_7_S25_Masio_05_TGACCA.R2.fastq.gz > Ruf_IL25_R2.fastq.gz
+cat Lane_3_S24_Masio_03_TCGGAT.R1.fastq.gz Lane_8_S24_Masio_03_TCGGAT.R1.fastq.gz Lane_7_S24_Masio_03_TCGGAT.R1.fastq.gz > Gray_IL24_R1.fastq.gz
+cat Lane_3_S24_Masio_03_TCGGAT.R2.fastq.gz Lane_8_S24_Masio_03_TCGGAT.R2.fastq.gz Lane_7_S24_Masio_03_TCGGAT.R2.fastq.gz > Gray_IL24_R2.fastq.gz
+cat Lane_3_S22_Masio_08_AGTCAA.R1.fastq.gz Lane_8_S22_Masio_08_AGTCAA.R1.fastq.gz Lane_7_S22_Masio_08_AGTCAA.R1.fastq.gz > Ruf_IL22_R1.fastq.gz
+cat Lane_3_S22_Masio_08_AGTCAA.R2.fastq.gz Lane_8_S22_Masio_08_AGTCAA.R2.fastq.gz Lane_7_S22_Masio_08_AGTCAA.R2.fastq.gz > Ruf_IL22_R2.fastq.gz
+cat Lane_3_S21_Masio_13_CATTAG.R1.fastq.gz Lane_8_S21_Masio_13_CATTAG.R1.fastq.gz Lane_7_S21_Masio_13_CATTAG.R1.fastq.gz > Ruf_WI21_R1.fastq.gz
+cat Lane_3_S21_Masio_13_CATTAG.R2.fastq.gz Lane_8_S21_Masio_13_CATTAG.R2.fastq.gz Lane_7_S21_Masio_13_CATTAG.R2.fastq.gz > Ruf_WI21_R2.fastq.gz
+
+
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Ruf_IL6_R1.fastq.gz --file2 /workdir/jlw395/Ruf_IL6_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_IL6
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Ruf_IL31_R1.fastq.gz --file2 /workdir/jlw395/Ruf_IL31_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_IL31
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Ruf_IL28_R1.fastq.gz --file2 /workdir/jlw395/Ruf_IL28_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_IL28
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Ruf_IL20_R1.fastq.gz --file2 /workdir/jlw395/Ruf_IL20_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_IL20
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Ruf_MN19_R1.fastq.gz --file2 /workdir/jlw395/Ruf_MN19_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_MN19
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Gray_WI17_R1.fastq.gz --file2 /workdir/jlw395/Gray_WI17_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Gray_WI17
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Ruf_WI13_R1.fastq.gz --file2 /workdir/jlw395/Ruf_WI13_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_WI13
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Gray_WI11_R1.fastq.gz --file2 /workdir/jlw395/Gray_WI11_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Gray_WI11
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Gray_WI9_R1.fastq.gz --file2 /workdir/jlw395/Gray_WI9_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Gray_WI9
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Ruf_WI7_R1.fastq.gz --file2 /workdir/jlw395/Ruf_WI7_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_WI7
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Gray_IL32_R1.fastq.gz --file2 /workdir/jlw395/Gray_IL32_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Gray_IL32
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Ruf_IL1_R1.fastq.gz --file2 /workdir/jlw395/Ruf_IL1_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_IL1
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Gray_WI18_R1.fastq.gz --file2 /workdir/jlw395/Gray_WI18_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Gray_WI18
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Mix_WI16_R1.fastq.gz --file2 /workdir/jlw395/Mix_WI16_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Mix_WI16
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Gray_IL15_R1.fastq.gz --file2 /workdir/jlw395/Gray_IL15_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Gray_IL15
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Mix_WI14_R1.fastq.gz --file2 /workdir/jlw395/Mix_WI14_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Mix_WI14
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Gray_IL10_R1.fastq.gz --file2 /workdir/jlw395/Gray_IL10_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Gray_IL10
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Ruf_IA3_R1.fastq.gz --file2 /workdir/jlw395/Ruf_IA3_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_IA3
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Gray_WI27_R1.fastq.gz --file2 /workdir/jlw395/Gray_WI27_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Gray_WI27
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Gray_WI26_R1.fastq.gz --file2 /workdir/jlw395/Gray_WI26_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Gray_WI26
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Ruf_IL25_R1.fastq.gz --file2 /workdir/jlw395/Ruf_IL25_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_IL25
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Gray_IL24_R1.fastq.gz --file2 /workdir/jlw395/Gray_IL24_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Gray_IL24
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Ruf_IL22_R1.fastq.gz --file2 /workdir/jlw395/Ruf_IL22_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_IL22
+/programs/adapterremoval_2.1.1/bin/AdapterRemoval --file1 /workdir/jlw395/Ruf_WI21_R1.fastq.gz --file2 /workdir/jlw395/Ruf_WI21_R2.fastq.gz --trimns --trimqualities --minquality 35 --minlength 25 --collapse --threads 8 --adapter-list for_adapter_removal_2.txt --basename Ruf_WI21
