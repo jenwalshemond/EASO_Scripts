@@ -74,7 +74,7 @@ parallel -j 4 < /workdir/jlw395/align/SambambaSortCommands.txt
 
 [ -f /workdir/jlw395/align/qualimapCommands.txt ] && rm /workdir/jlw395/align/qualimapCommands.txt
 
-cd /workdir/jlw395/align_GRSP/
+cd /workdir/jlw395/align/
 
 for BAM in *.bam; do
 
