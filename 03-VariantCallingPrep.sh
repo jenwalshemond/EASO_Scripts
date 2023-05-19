@@ -13,8 +13,8 @@
 #### Prepare the genome: index it (fai and dict files)
 # R:Refernece
 # O:Output
-java -Xmx48g -jar /programs/picard-tools-2.8.2/picard.jar CreateSequenceDictionary R=GCA_020466415.1_ASM2046641v1_genomic.fna O=GCA_020466415.1_ASM2046641v1_genomic.fna.dict
-samtools faidx GCA_020466415.1_ASM2046641v1_genomic.fna
+java -Xmx48g -jar /programs/picard-tools-2.8.2/picard.jar CreateSequenceDictionary R=Masio_pseudohap2.1.fasta O=Masio_pseudohap2.1.fasta.dict
+samtools faidx Masio_pseudohap2.1.fasta
 
 #Traditionally, I would add readgroup info, but I have SM info in the bam files, which is used for labeling individuals in VCF and am fine with that. I have no other use for RG info for this project
 
@@ -34,7 +34,7 @@ for RGBAM in *_sorted.bam; do
 
 done
 
-parallel -j 8 < /workdir/jlw395/align_GRSP/markDuplicatesCommands.txt
+parallel -j 8 < /workdir/jlw395/align/markDuplicatesCommands.txt
 
 
 
