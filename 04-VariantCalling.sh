@@ -3,17 +3,17 @@
 # split by chromosome/contig
 
 #### explore a bam file to figure out how to split up over 40 cores
-samtools view -H GRSP25_FL-64509.bam_sorted_mark.bam | less
+samtools view -H Gray_OH23.bam_sorted_mark.bam | less
 
 ## get genome length
 # grep lines that with @SQ
-samtools view -H GRSP25_FL-64509.bam_sorted_mark.bam | less | grep "^@SQ" | cut -f 3 | cut -d: -f2 | awk '{sum+=$1}END{print sum}'
+samtools view -H Gray_OH23.bam_sorted_mark.bam | less | grep "^@SQ" | cut -f 3 | cut -d: -f2 | awk '{sum+=$1}END{print sum}'
 
 ## get number of contigs
-samtools view -H GRSP25_FL-64509.bam_sorted_mark.bam | grep "^@SQ" | cut -f 3 | cut -d: -f2 | wc -l
+samtools view -H Gray_OH23.bam_sorted_mark.bam | grep "^@SQ" | cut -f 3 | cut -d: -f2 | wc -l
 
 # make regions file
-samtools view -H GRSP25_FL-64509.bam_sorted_mark.bam | grep "^@SQ" | cut -f 2,3  | awk '
+samtools view -H Gray_OH23.bam_sorted_mark.bam | grep "^@SQ" | cut -f 2,3  | awk '
 BEGIN {
     cutoff=27000000
     FS=OFS="\t"
@@ -32,7 +32,7 @@ BEGIN {
 
 
 # looking at mapping quality
-samtools view --exclude-flags SECONDARY,SUPPLEMENTARY GRSP25_FL-64509.bam_sorted_mark.bam | cut -f5 | sort -nr | uniq -c | less
+samtools view --exclude-flags SECONDARY,SUPPLEMENTARY Gray_OH23.bam_sorted_mark.bam | cut -f5 | sort -nr | uniq -c | less
 
 
 # http://www.htslib.org/doc/bcftools.html#mpileup
@@ -54,7 +54,7 @@ samtools view --exclude-flags SECONDARY,SUPPLEMENTARY GRSP25_FL-64509.bam_sorted
 
 mkdir vcf2
 
-genome=GCA_020466415.1_ASM2046641v1_genomic.fna
+genome=Masio_pseudohap2.1.fasta
 bamfiles=*_sorted_mark.bam
 for regions in regions_*.txt; do
     mpileupVCF=${regions%.txt}.raw.mpileup.vcf
@@ -88,8 +88,8 @@ for filteredVCF in *.filtered.vcf.recode.vcf; do
 done
 
 # then, bcftools concatenate
-bcftools concat regions_01.sorted.filtered.vcf regions_02.sorted.filtered.vcf regions_03.sorted.filtered.vcf regions_04.sorted.filtered.vcf regions_05.sorted.filtered.vcf regions_06.sorted.filtered.vcf regions_07.sorted.filtered.vcf regions_08.sorted.filtered.vcf regions_09.sorted.filtered.vcf regions_10.sorted.filtered.vcf regions_11.sorted.filtered.vcf regions_12.sorted.filtered.vcf regions_13.sorted.filtered.vcf regions_14.sorted.filtered.vcf regions_15.sorted.filtered.vcf -Oz -o filtered_GRSP_38Samples_140923.vcf.gz
+bcftools concat regions_01.sorted.filtered.vcf regions_02.sorted.filtered.vcf regions_03.sorted.filtered.vcf regions_04.sorted.filtered.vcf regions_05.sorted.filtered.vcf regions_06.sorted.filtered.vcf regions_07.sorted.filtered.vcf regions_08.sorted.filtered.vcf regions_09.sorted.filtered.vcf regions_10.sorted.filtered.vcf regions_11.sorted.filtered.vcf regions_12.sorted.filtered.vcf regions_13.sorted.filtered.vcf regions_14.sorted.filtered.vcf regions_15.sorted.filtered.vcf regions_16.sorted.filtered.vcf regions_17.sorted.filtered.vcf regions_18.sorted.filtered.vcf regions_19.sorted.filtered.vcf regions_20.sorted.filtered.vcf regions_21.sorted.filtered.vcf regions_22.sorted.filtered.vcf regions_23.sorted.filtered.vcf regions_24.sorted.filtered.vcf regions_25.sorted.filtered.vcf regions_26.sorted.filtered.vcf regions_27.sorted.filtered.vcf regions_28.sorted.filtered.vcf regions_29.sorted.filtered.vcf regions_30.sorted.filtered.vcf regions_31.sorted.filtered.vcf regions_32.sorted.filtered.vcf -Oz -o filtered_EASO_55Samples_052023.vcf.gz
 
 # valadate vcf to make sure everything is ok
-vcf-validator filtered_GRSP_38Samples_140923.vcf.gz
-#19,799,623
+vcf-validator filtered_EASO_55Samples_052023.vcf.gz
+#15,767,149 variants
