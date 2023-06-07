@@ -30,7 +30,7 @@ for RGBAM in *_sorted.bam; do
   METRICS=${RGBAM/%_sorted.bam/.metrics.txt}
 
   #create index file
-  echo "java -Xmx15g -jar /programs/picard-tools-2.8.2/picard.jar MarkDuplicates INPUT=$RGBAM OUTPUT=$OUT METRICS_FILE=$METRICS MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=1000" >> /workdir/jlw395/align_GRSP/markDuplicatesCommands.txt
+  echo "java -Xmx15g -jar /programs/picard-tools-2.8.2/picard.jar MarkDuplicates INPUT=$RGBAM OUTPUT=$OUT METRICS_FILE=$METRICS MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=1000" >> /workdir/jlw395/align/markDuplicatesCommands.txt
 
 done
 
@@ -41,19 +41,19 @@ parallel -j 8 < /workdir/jlw395/align/markDuplicatesCommands.txt
 #### Validate files
 # since running HaplotypeCaller, don't need to realign or fix mates unless there is an error in ValidateSamFile
 
-[ -f /workdir/jlw395/validateCommands.txt ] && rm /workdir/jlw395/align_GRSP/validateCommands.txt
+[ -f /workdir/jlw395/align/validateCommands.txt ] && rm /workdir/jlw395/align/validateCommands.txt
 
-cd /workdir/jlw395/align_GRSP
+cd /workdir/jlw395/align
 
 for MARKBAM in *mark.bam; do
 
   OUTFILE=${MARKBAM/%.bam/_validate}
 
-  echo "java -Xmx48g -jar /programs/picard-tools-2.8.2/picard.jar ValidateSamFile I=$MARKBAM OUTPUT=$OUTFILE MODE=SUMMARY" >> /workdir/jlw395/align_GRSP/ValidateCommands.txt
+  echo "java -Xmx48g -jar /programs/picard-tools-2.8.2/picard.jar ValidateSamFile I=$MARKBAM OUTPUT=$OUTFILE MODE=SUMMARY" >> /workdir/jlw395/align/ValidateCommands.txt
 
 done
 
-parallel -j 22 < /workdir/jlw395/align_GRSP/ValidateCommands.txt
+parallel -j 22 < /workdir/jlw395/align/ValidateCommands.txt
 
 # concatenate all validate output into one text file to see if there are any errors
 cat *validate > summary_validate.txt
@@ -62,15 +62,15 @@ cat *validate > summary_validate.txt
 
 #### index .bam files for HaplotypeCaller
 #can run multiple at a time
-[ -f /workdir/jlw395/align_GRSP/IndexCommands.txt ] && rm /workdir/jlw395/align_GRSP/IndexCommands.txt
+[ -f /workdir/jlw395/align/IndexCommands.txt ] && rm /workdir/jlw395/align/IndexCommands.txt
 
-cd /workdir/jlw395/align_GRSP
+cd /workdir/jlw395/align
 
 for MARKBAM in *mark.bam; do
 
   #create index file
-  echo "java -Xmx10g -jar /programs/picard-tools-2.8.2/picard.jar BuildBamIndex I=$MARKBAM" >> /workdir/jlw395/align_GRSP/IndexCommands.txt
+  echo "java -Xmx10g -jar /programs/picard-tools-2.8.2/picard.jar BuildBamIndex I=$MARKBAM" >> /workdir/jlw395/align/IndexCommands.txt
 
 done
 
-parallel -j 22 < /workdir/jlw395/align_GRSP/IndexCommands.txt
+parallel -j 22 < /workdir/jlw395/align/IndexCommands.txt
